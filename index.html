@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黄若杰 | Ruojie Huang - Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfcf8; /* 温暖纸感底色 */
+            --text-main: #1a1a1a;
+            --text-secondary: #555;
+            --accent: #2d5a27; /* 园林与自然意向的深绿 */
+            --border: rgba(0,0,0,0.08);
+            --font-serif: 'Noto Serif SC', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-top: none;
+            padding-top: 60px;
+        }
+
+        .hero-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            align-items: end;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 8rem;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            letter-spacing: -0.04em;
+        }
+
+        .role-tag {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .value-prop {
+            font-size: 1.8rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-bottom: 40px;
+            color: var(--text-secondary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--text-main);
+            color: var(--bg-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Proof Strip */
+        .proof-strip {
+            padding: 40px 0;
+            background: rgba(0,0,0,0.02);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .proof-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .proof-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .proof-val {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--text-main);
+        }
+
+        .proof-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Selected Work / Featured Results */
+        .section-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            display: block;
+            color: var(--accent);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px 40px;
+        }
+
+        .project-card h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            font-size: 0.8rem;
+            background: #eee;
+            padding: 4px 12px;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+
+        .project-desc {
+            margin-top: 20px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        /* Experience */
+        .exp-item {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            margin-bottom: 40px;
+        }
+
+        .exp-date {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .exp-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .exp-company {
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .about-text {
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .skills-list li b {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Contact */
+        .contact {
+            padding-bottom: 150px;
+        }
+
+        .contact-big {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            text-decoration: none;
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 40px;
+            word-break: break-all;
+        }
+
+        .contact-big:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 4rem; }
+            .hero-top, .grid, .about-content, .exp-item { grid-template-columns: 1fr; }
+            .proof-container { flex-wrap: wrap; }
+            .contact-big { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <section class="hero">
+            <span class="role-tag">AI-HR 培训生 / 计算神经科学</span>
+            <div class="hero-top">
+                <h1>黄若杰</h1>
+                <p class="value-prop">
+                    以科学思维洞察人性，用计算建模驱动决策。连接心理学深度观察与 AI 技术的落地实践。
+                </p>
+            </div>
+            <div style="margin-top: 40px;">
+                <a href="mailto:283646073@qq.com" class="cta-button">获取简历详情</a>
+            </div>
+        </section>
+    </div>
+
+    <div class="proof-strip">
+        <div class="container proof-container">
+            <div class="proof-item">
+                <span class="proof-val">100%</span>
+                <span class="proof-label">辅导上岸率</span>
+            </div>
+            <div class="proof-item">
+                <span class="proof-val">3+ Years</span>
+                <span class="proof-label">ChatGPT 深度融合经验</span>
+            </div>
+            <div class="proof-item">
+                <span class="proof-val">MCMC</span>
+                <span class="proof-label">贝叶斯认知建模能力</span>
+            </div>
+            <div class="proof-item">
+                <span class="proof-val">OpenClaw</span>
+                <span class="proof-label">独立 Agent 部署经验</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="work">
+            <span class="section-label">Selected Results / 重点项目</span>
+            <div class="grid">
+                <div class="project-card">
+                    <span class="project-tag">计算建模</span>
+                    <h3>动机行为偏差研究</h3>
+                    <p class="project-desc">
+                        针对强迫症患者，运用 Monte Carlo Markov Chain (MCMC) 方法构建贝叶斯模型，有效量化决策偏差。
+                    </p>
+                </div>
+                <div class="project-card">
+                    <span class="project-tag">人才筛选</span>
+                    <h3>优势视角面试辅导</h3>
+                    <p class="project-desc">
+                        摒弃模板化套路，引导候选人深挖核心兴趣，为其定制面试策略，实现 100% 成功录取的实战成果。
+                    </p>
+                </div>
+                <div class="project-card">
+                    <span class="project-tag">神经网络</span>
+                    <h3>PyTorch 实操</h3>
+                    <p class="project-desc">
+                        深入理解梯度下降与反向传播，能独立构建 CNN、RNN 等前馈网络并完成模型训练。
+                    </p>
+                </div>
+                <div class="project-card">
+                    <span class="project-tag">前沿探索</span>
+                    <h3>OpenClaw 本地化部署</h3>
+                    <p class="project-desc">
+                        在 WSL 环境下完成开源 Agent 框架部署，打通大语言模型在日常科研分析中的落地路径。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <span class="section-label">Professional Path / 职业经历</span>
+            
+            <div class="exp-item">
+                <span class="exp-date">2025 - 2026</span>
+                <div>
+                    <span class="exp-title">心理学考研复试辅导专家</span>
+                    <span class="exp-company">四川晴天心研科技发展有限公司</span>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-date">2024 - 2027</span>
+                <div>
+                    <span class="exp-title">心理学硕士 (计算神经科学)</span>
+                    <span class="exp-company">深圳大学</span>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-date">2020 - 2021</span>
+                <div>
+                    <span class="exp-title">景观设计师</span>
+                    <span class="exp-company">深圳媚道风景园林与城市规划设计院</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <span class="section-label">About / 核心胜任力</span>
+            <div class="about-content">
+                <div class="about-text">
+                    从园林到心理学，从景观设计到计算建模。跨学科的背景赋予了我敏锐的审美与严谨的科学思维。我渴望将对技术的热爱带到腾讯 AI-HR STAR，为人才管理注入数据灵魂。
+                </div>
+                <div>
+                    <ul class="skills-list">
+                        <li>
+                            <b>脑电信号处理</b>
+                            熟悉 MNE-Python & MatLab，独立完成数据清洗与时频分析。
+                        </li>
+                        <li>
+                            <b>AI 工具深度使用</b>
+                            OpenClaw, Gemini, ChatGPT 深度融合学习与工作流。
+                        </li>
+                        <li>
+                            <b>数据可视化</b>
+                            熟练使用 Python-Matplotlib 绘制科研向统计图。
+                        </li>
+                        <li>
+                            <b>统计建模</b>
+                            熟悉方差分析、卡方检验及 MCMC 贝叶斯建模。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <span class="section-label">Connect / 建立联系</span>
+            <a href="mailto:283646073@qq.com" class="contact-big">283646073@qq.com</a>
+            <div style="display: flex; gap: 40px; color: var(--text-secondary);">
+                <span>+86 184 8729 0626</span>
+                <span>广东·深圳</span>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
